@@ -1,14 +1,12 @@
-from pydoc import describe
 from pywebio.output import *
-from pywebio.session import *
 
 
 def showInfo():
     '''ShowInfo
     
-    查看当前所有学生信息
+    查看当前量化考核信息
     '''
-    set_env(title="ShowInfo")
+
     with open("data\data.csv", "r", encoding="utf8") as fp:
 
         content = [i.split(",") for i in fp.read().split()]
@@ -20,6 +18,12 @@ def showInfo():
                 i[n] = put_html('<b style="color:#0033FF">' + i[n] + "</b>")
         else:
             i[0] = put_html('<b style="color:#0033FF">' + i[0] + "</b>")
+    
+    with use_scope("head"):
+        
+        put_text("量化考核信息")
+    
+    with use_scope("body"):
 
-    put_table(content).show()
+        put_table(content).show()
 
