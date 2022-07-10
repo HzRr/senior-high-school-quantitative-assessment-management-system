@@ -87,7 +87,3 @@ def addInfo():
                 score = data[i]
                 logger_content += f"\n\t{i}: {' 0' if score == '' else int(score)>0 and '+'+str(int(score)) or score}"
             print(logger_content)
-
-
-        
-
