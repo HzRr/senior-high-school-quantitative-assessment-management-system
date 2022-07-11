@@ -1,6 +1,6 @@
 from pywebio.output import *
 from pywebio.input import *
-import datetime
+from utils.logger import logger
 
 
 def addInfo():
@@ -12,7 +12,7 @@ def addInfo():
     def check(data):
         # 检测输入是否合法
         try:
-            data == "" or int(data)
+            data == "" or int(data.split()[0])
         except:
             return "输入不合法!"
 
@@ -22,7 +22,7 @@ def addInfo():
 
     with use_scope("head"):
         
-        put_text("添加信息")
+        put_html("<p style='text-align:center'>添加信息</p>")
 
     with use_scope("body"):
         
@@ -59,7 +59,7 @@ def addInfo():
                     continue
 
                 score = data[i[0]]
-                i.append('0' if score == '' else int(score)>0 and "+"+str(int(score)) or score)
+                i.append('0' if (score == '' or score == '0') else int(score)>0 and "+"+str(int(score)) or score)
 
                 # 总分求和
                 # sum = i[1] + i[-1]
@@ -77,13 +77,13 @@ def addInfo():
                 
         except Exception as e:
             
-            put_warning(f"信息添加出错!请重试或寻求管理员帮助!\nException: {repr(e)}")
-            print(f"[{str(datetime.datetime.today()).split('.')[0]}] Exception: {repr(e)}")
+            put_error(f"信息添加出错!请重试或寻求管理员帮助!\nException: {repr(e)}")
+            logger(f"AddInfo Exception: {repr(e)}")
 
         else:
             put_success("信息添加成功!")
-            logger_content = f"[{str(datetime.datetime.today()).split('.')[0]}] 添加了以下信息:"
+            logger_content = f"添加了以下信息:"
             for i in student_name:
                 score = data[i]
                 logger_content += f"\n\t{i}: {' 0' if score == '' else int(score)>0 and '+'+str(int(score)) or score}"
-            print(logger_content)
+            logger(logger_content)

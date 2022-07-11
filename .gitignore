@@ -1,1 +1,4 @@
 /1test
+/page/__pycache__
+/utils/__pycache__
+/utils/log/logs.txt
