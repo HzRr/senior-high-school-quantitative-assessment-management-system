@@ -1,5 +1,4 @@
 from pywebio.output import *
-from copy import deepcopy
 
 
 def showInfo():
