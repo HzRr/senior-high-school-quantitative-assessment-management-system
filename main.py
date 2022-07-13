@@ -10,5 +10,6 @@ start_server(
         port=11451,
         # auto_open_webbrowser=True,
         remote_access=True,
+        cdn=True,
         # debug=True
         )
