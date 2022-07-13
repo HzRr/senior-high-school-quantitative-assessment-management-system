@@ -8,11 +8,11 @@ def analysisInfo():
     
     选择并对比的量化考核成绩
     """
-    with open("data\data.csv", "r", encoding="utf8") as fp:
+    with open("data/data.csv", "r", encoding="utf8") as fp:
 
         data = [i.split(",") for i in fp.read().split()]
     
-    with open("data\group.csv", "r", encoding="utf8") as fp:
+    with open("data/group.csv", "r", encoding="utf8") as fp:
 
         group_data = [i.split(",") for i in fp.read().split()]
 

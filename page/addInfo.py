@@ -16,7 +16,7 @@ def addInfo():
         except:
             return "输入不合法!"
 
-    with open("data\data.csv", "r", encoding="utf8") as fp:
+    with open("data/data.csv", "r", encoding="utf8") as fp:
         # 获取学生名单
         student_name = [i.split(",")[0] for i in fp.read().split()[1:]]
 
@@ -41,7 +41,7 @@ def addInfo():
 
             # print(data)
             # 添加信息
-            with open("data\data.csv", "r", encoding="utf8") as fp:
+            with open("data/data.csv", "r", encoding="utf8") as fp:
 
                 content = [i.split(",") for i in fp.read().split()]
 
@@ -71,7 +71,7 @@ def addInfo():
                 content[index] = ",".join(i)
             
             # print(content)
-            with open("data\data.csv", "w", encoding="utf8", newline="") as fp:
+            with open("data/data.csv", "w", encoding="utf8", newline="") as fp:
 
                 fp.write("\n".join(content))
                 

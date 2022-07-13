@@ -16,7 +16,7 @@ def updateInfo():
         except:
             return "输入不合法!"
 
-    with open("data\data.csv", "r", encoding="utf8") as fp:
+    with open("data/data.csv", "r", encoding="utf8") as fp:
 
         data = [i.split(",") for i in fp.read().split()]
 
@@ -47,7 +47,7 @@ def updateInfo():
             data[index] = ",".join(i)
 
         # 写入数据
-        with open("data\data.csv", "w", encoding="utf8", newline="") as fp:
+        with open("data/data.csv", "w", encoding="utf8", newline="") as fp:
 
                 fp.write("\n".join(data))
 

@@ -7,7 +7,7 @@ def showInfo():
     查看当前量化考核信息
     '''
 
-    with open("data\data.csv", "r", encoding="utf8") as fp:
+    with open("data/data.csv", "r", encoding="utf8") as fp:
 
         data = [i.split(",") for i in fp.read().split()]
         data[0] = ["组别"]+data[0]
