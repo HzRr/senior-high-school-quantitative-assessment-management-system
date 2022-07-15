@@ -8,6 +8,7 @@ from page.analysisInfo import analysisInfo
 start_server(
         applications=[showInfo, addInfo, updateInfo, analysisInfo],
         port=39911,
+        host="0.0.0.0",
         # auto_open_webbrowser=True,
         remote_access=True,
         cdn=True,

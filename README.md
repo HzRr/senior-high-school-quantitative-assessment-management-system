@@ -4,6 +4,7 @@ pyWebIO实现的高中量化考核管理系统
 启动方法:  
     在main.py所在目录下输入python3 main.py  
     会打印一个remote access, 然后通过这个access访问网站  
+    或者用 公网ip:端口 访问  
     为了更方便快捷地访问网站，可以自己解析一个中转域名，然后通过这个域名来访问  
 
 PS:  
